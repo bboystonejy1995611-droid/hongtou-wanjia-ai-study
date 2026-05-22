@@ -1,0 +1,25 @@
+{
+  "name": "红头顽家 AI 学习助手｜免费本地版",
+  "short_name": "红头顽家学习助手",
+  "description": "电脑 Ollama、移动端浏览器本地模型和低配置备用工具一体的本地学习助手。",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#0b63f6",
+  "icons": [
+    {
+      "src": "/icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
