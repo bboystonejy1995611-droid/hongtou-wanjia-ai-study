@@ -12,3 +12,5 @@ pnpm-debug.log*
 
 .vercel
 .env*
+out/
+cloudflare-pages-out.zip
