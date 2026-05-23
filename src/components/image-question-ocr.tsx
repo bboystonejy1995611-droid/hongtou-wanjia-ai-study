@@ -75,26 +75,26 @@ export function ImageQuestionOcr({ onTextRecognized }: ImageQuestionOcrProps) {
   const recognizing = status === "recognizing";
 
   return (
-    <div className="mt-4 rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-violet-50 p-4 shadow-sm">
+    <div className="ocr-upload-card mt-4 p-4">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex min-w-0 gap-3">
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm">
+          <span className="ocr-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-white shadow-sm">
             <ScanText aria-hidden="true" className="h-5 w-5" />
           </span>
           <div className="min-w-0">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
+            <p className="ocr-kicker text-xs font-black uppercase tracking-[0.18em]">
               拍照识题
             </p>
-            <h3 className="mt-1 text-lg font-black text-slate-950">
+            <h3 className="ocr-title mt-1 text-lg font-black">
               上传题目图片
             </h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
+            <p className="ocr-copy mt-2 text-sm leading-6">
               电脑端选择图片上传；手机和平板可以拍照或从相册选择。识别结果会自动填入题目框。
             </p>
           </div>
         </div>
 
-        <label className="button-secondary cursor-pointer justify-center">
+        <label className="ocr-action cursor-pointer justify-center">
           {recognizing ? (
             <LoaderCircle aria-hidden="true" className="h-4 w-4 animate-spin" />
           ) : (
@@ -113,12 +113,12 @@ export function ImageQuestionOcr({ onTextRecognized }: ImageQuestionOcrProps) {
       </div>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
-        <p className="flex items-start gap-2 text-sm leading-6 text-slate-600">
-          <Camera aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" />
+        <p className="ocr-progress flex items-start gap-2 text-sm leading-6">
+          <Camera aria-hidden="true" className="ocr-progress-icon mt-0.5 h-4 w-4 shrink-0" />
           <span>{progressText}</span>
         </p>
         {fileName ? (
-          <span className="truncate rounded-full border border-blue-100 bg-white px-3 py-1 text-xs font-bold text-slate-500">
+          <span className="ocr-file truncate rounded-full px-3 py-1 text-xs font-bold">
             {fileName}
           </span>
         ) : null}
