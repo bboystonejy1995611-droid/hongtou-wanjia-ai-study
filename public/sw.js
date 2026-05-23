@@ -1,4 +1,4 @@
-const CACHE_NAME = "dance-growth-local-shell-v1";
+const CACHE_NAME = "hongtou-wanjia-local-shell-v2";
 const APP_SHELL = [
   "/",
   "/offline",
@@ -55,4 +55,3 @@ self.addEventListener("fetch", (event) => {
       }),
   );
 });
-

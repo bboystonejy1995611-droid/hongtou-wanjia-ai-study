@@ -50,7 +50,7 @@ describe("device helpers", () => {
         ollamaReachable: false,
         webGpuSupported: true,
       }),
-    ).toBe("mobile-ai");
+    ).toBe("fallback");
 
     expect(
       recommendStudyMode({
@@ -79,4 +79,3 @@ describe("device helpers", () => {
     ).toBe("fallback");
   });
 });
-

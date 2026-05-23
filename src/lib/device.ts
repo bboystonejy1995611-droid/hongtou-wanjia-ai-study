@@ -57,10 +57,6 @@ export function recommendStudyMode({
     return "desktop-ai";
   }
 
-  if (deviceType !== "desktop" && webGpuSupported && !constrainedHardware) {
-    return "mobile-ai";
-  }
-
   return "fallback";
 }
 
@@ -74,4 +70,3 @@ export function detectConstrainedHardware({
 
   return lowMemory || fewCpuThreads;
 }
-
