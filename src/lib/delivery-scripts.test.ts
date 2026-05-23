@@ -34,8 +34,20 @@ describe("Windows parent delivery scripts", () => {
     expect(script).not.toContain("ollama pull");
   });
 
+  it("creates a desktop shortcut that points to start.bat and the app icon", () => {
+    const script = readRootScript("create-desktop-shortcut.bat");
+
+    expect(script).toContain("start.bat");
+    expect(script).toContain("public\\icons\\app-icon.ico");
+    expect(script).toContain("CreateShortcut");
+    expect(script).toContain("IconLocation");
+  });
+
   it("uses Windows line endings so cmd keeps Chinese batch lines intact", () => {
     expect(usesOnlyWindowsLineEndings(readRootScript("install.bat"))).toBe(true);
     expect(usesOnlyWindowsLineEndings(readRootScript("start.bat"))).toBe(true);
+    expect(usesOnlyWindowsLineEndings(readRootScript("create-desktop-shortcut.bat"))).toBe(
+      true,
+    );
   });
 });
