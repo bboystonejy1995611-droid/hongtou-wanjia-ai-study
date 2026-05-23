@@ -96,7 +96,7 @@ export default function InstallGuidePage() {
           <h2 className="mt-4 text-2xl font-black text-slate-950">适合想体验本地 AI 答疑的 Windows 家庭</h2>
           <p className="mt-3 text-sm leading-7 text-slate-600">
             有电脑、愿意安装 Node.js 和 Ollama、网络能下载 qwen3:1.7b 时，可以走这一版。收到 zip
-            后先解压到桌面，第一次准备完成后，以后双击启动脚本即可打开页面。
+            后先解压到桌面，第一次准备完成后，以后双击启动脚本或桌面图标即可打开页面。
           </p>
         </article>
         <article className="surface p-5 sm:p-6">
@@ -158,7 +158,8 @@ export default function InstallGuidePage() {
             ))}
           </div>
           <p className="mt-4 text-sm leading-7 text-slate-600">
-            电脑端使用 AI 答疑时，请让 Ollama 保持运行；如果只是整理计划、错题或模板，也可以先从工具箱开始。
+            电脑端使用 AI 答疑时，请让 Ollama 保持运行；如果想放到桌面，可双击
+            create-desktop-shortcut.bat 创建“红头顽家 AI 学习助手”快捷图标。
           </p>
         </article>
       </section>

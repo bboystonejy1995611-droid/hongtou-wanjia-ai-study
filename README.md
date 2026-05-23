@@ -48,8 +48,9 @@
 2. 家长把压缩包解压到桌面。
 3. 第一次双击 `install.bat`。
 4. 按提示安装或检查 Ollama，并下载 `qwen3:1.7b`。
-5. 以后双击 `start.bat` 启动学习助手。
-6. 浏览器打开 `http://localhost:3000` 后使用。
+5. 想要桌面图标时，双击 `create-desktop-shortcut.bat` 创建快捷方式。
+6. 以后双击桌面图标或 `start.bat` 启动学习助手。
+7. 浏览器打开 `http://localhost:3000` 后使用。
 
 ### 手机 / 平板学习工具箱版
 
@@ -85,6 +86,9 @@
    - 这个脚本只负责检查 Node.js 和 npm，并启动学习助手。
    - 如果电脑缺少 Node.js 运行环境，会提示先到 Node.js 官网下载，安装完成后重新双击。
    - 启动后会自动打开 `http://localhost:3000`。
+3. 可选：双击 `create-desktop-shortcut.bat`。
+   - 这个脚本会在桌面创建“红头顽家 AI 学习助手”快捷图标。
+   - 以后家长可以直接双击桌面图标启动，不用每次进文件夹找 `start.bat`。
 
 普通家庭电脑优先尝试 `qwen3:1.7b`。使用电脑端 AI 答疑时，请保持 Ollama 运行；如果电脑跑起来比较吃力，也可以直接使用页面里的学习工具箱模式。
 
@@ -130,11 +134,13 @@ npm run start
 
 - `install.bat`
 - `start.bat`
+- `create-desktop-shortcut.bat`
 - `README.md`
 - `package.json`
 - `package-lock.json`
 - `src`
 - `public`
+- `scripts`
 - `next.config`
 - `tsconfig`
 - 其他项目必要配置文件
@@ -147,10 +153,14 @@ npm run start
 - `dev-server`
 - `dev-server-error`
 - `tsconfig.tsbuildinfo`
+- `out`
+- `cloudflare-pages-out.zip`
+- `红头顽家AI学习助手-电脑增强版.zip`
+- `红头顽家AI学习助手-电脑增强版`
 
 不必把本机已经下载的 Ollama 模型打进压缩包，家长电脑会通过 `install.bat` 准备 `qwen3:1.7b`。通常也不要把 `node_modules` 打进压缩包，压缩包会更小；家长第一次运行 `start.bat` 时会自动准备项目运行文件。
 
-发给家长时附一句说明：先双击 `install.bat`，再双击 `start.bat`。
+发给家长时附一句说明：先双击 `install.bat`，再双击 `start.bat`；想放到桌面就再双击 `create-desktop-shortcut.bat`。
 
 如果分享对象完全不熟悉电脑安装流程，建议同时告诉家长：电脑端第一次准备本地 AI 可能需要等待模型下载完成，手机和平板可以先使用学习工具箱模式。
 

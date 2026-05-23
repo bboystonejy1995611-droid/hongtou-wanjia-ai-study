@@ -12,9 +12,11 @@ function usesOnlyWindowsLineEndings(text: string) {
 
 describe("Windows parent delivery scripts", () => {
   it("keeps install.bat focused on Ollama and the light qwen3 model", () => {
-    const script = readRootScript("install.bat");
+    const wrapper = readRootScript("install.bat");
+    const script = readRootScript("scripts/install-helper.ps1");
 
-    expect(script).toContain("where ollama");
+    expect(wrapper).toContain("scripts\\install-helper.ps1");
+    expect(script).toContain("Get-Command ollama");
     expect(script).toContain("ollama list");
     expect(script).toContain("ollama pull qwen3:1.7b");
     expect(script).toContain("请到下面的官网下载并安装");
@@ -23,10 +25,14 @@ describe("Windows parent delivery scripts", () => {
   });
 
   it("keeps start.bat focused on Node checks and launching the local app", () => {
-    const script = readRootScript("start.bat");
+    const wrapper = readRootScript("start.bat");
+    const script = readRootScript("scripts/start-helper.ps1");
 
-    expect(script).toContain("where node");
-    expect(script).toContain("where npm");
+    expect(wrapper).toContain("scripts\\start-helper.ps1");
+    expect(script).toContain("Get-Command node");
+    expect(script).toContain("Get-Command npm");
+    expect(script).toContain("npm install");
+    expect(script).toContain("npm run dev");
     expect(script).toContain("http://localhost:3000");
     expect(script).toContain("请到下面的官网下载");
     expect(script).toContain("https://nodejs.org/en/download");
@@ -35,8 +41,10 @@ describe("Windows parent delivery scripts", () => {
   });
 
   it("creates a desktop shortcut that points to start.bat and the app icon", () => {
-    const script = readRootScript("create-desktop-shortcut.bat");
+    const wrapper = readRootScript("create-desktop-shortcut.bat");
+    const script = readRootScript("scripts/create-desktop-shortcut.ps1");
 
+    expect(wrapper).toContain("scripts\\create-desktop-shortcut.ps1");
     expect(script).toContain("start.bat");
     expect(script).toContain("public\\icons\\app-icon.ico");
     expect(script).toContain("CreateShortcut");
