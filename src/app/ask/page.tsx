@@ -11,6 +11,7 @@ import {
 import { useState } from "react";
 
 import { FallbackToolkit } from "@/components/fallback-toolkit";
+import { ImageQuestionOcr } from "@/components/image-question-ocr";
 import { StructuredAnswer } from "@/components/structured-answer";
 import { useDeviceProfile } from "@/hooks/use-device-profile";
 import { useMobileWebLlm } from "@/hooks/use-mobile-webllm";
@@ -42,6 +43,15 @@ export default function AskPage() {
   const [forceFallback, setForceFallback] = useState(false);
   const [saved, setSaved] = useState(false);
   const effectiveMode = forceFallback ? "fallback" : profile.mode;
+
+  function handleRecognizedQuestion(text: string) {
+    setQuestion((current) => {
+      const trimmedCurrent = current.trim();
+
+      return trimmedCurrent ? `${trimmedCurrent}\n\n${text}` : text;
+    });
+    setError("");
+  }
 
   async function handleAsk() {
     const trimmedQuestion = question.trim();
@@ -186,6 +196,8 @@ export default function AskPage() {
               value={question}
             />
           </label>
+
+          <ImageQuestionOcr onTextRecognized={handleRecognizedQuestion} />
 
           {effectiveMode === "mobile-ai" ? (
             <div className="mt-4 rounded-lg border border-violet-200 bg-violet-50 p-4 text-sm leading-7 text-violet-950">

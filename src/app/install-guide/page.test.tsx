@@ -18,5 +18,7 @@ describe("parent install guide", () => {
     expect(markup).toContain("http://192.168.1.8:3000");
     expect(markup).toContain("Windows 防火墙");
     expect(markup).toContain("正式分享给家长");
+    expect(markup).toContain("题目图片先本地识别");
+    expect(markup).toContain("手机端也可以拍照识题");
   });
 });

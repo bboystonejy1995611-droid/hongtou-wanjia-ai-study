@@ -6,6 +6,7 @@ import {
   House,
   Laptop,
   PlayCircle,
+  ScanText,
   Smartphone,
   Sparkles,
   Wrench,
@@ -32,6 +33,11 @@ const parentNotes = [
     icon: Smartphone,
     title: "手机平板先走轻量路线",
     copy: "手机和平板默认先使用学习工具箱模式，先做计划、错题和报告模板，不必先装电脑软件。",
+  },
+  {
+    icon: ScanText,
+    title: "题目图片先本地识别",
+    copy: "AI 答疑页支持上传题目图片；手机和平板可拍照。识别在浏览器本地完成，清晰印刷题效果更好。",
   },
 ];
 
@@ -97,6 +103,7 @@ export default function InstallGuidePage() {
           <p className="mt-3 text-sm leading-7 text-slate-600">
             有电脑、愿意安装 Node.js 和 Ollama、网络能下载 qwen3:1.7b 时，可以走这一版。收到 zip
             后先解压到桌面，第一次准备完成后，以后双击启动脚本或桌面图标即可打开页面。
+            电脑端答疑页可以上传题目图片，识别文字后再交给本地 AI 答疑。
           </p>
         </article>
         <article className="surface p-5 sm:p-6">
@@ -104,6 +111,7 @@ export default function InstallGuidePage() {
           <h2 className="mt-4 text-2xl font-black text-slate-950">不用先装模型，也能先把学习流程用起来</h2>
           <p className="mt-3 text-sm leading-7 text-slate-600">
             手机和平板默认先使用学习工具箱模式。本地 AI 增强版是电脑上的可选功能，不是家长必须完成的步骤。
+            手机端也可以拍照识题，识别后再使用工具箱模板整理思路。
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {toolboxItems.map((item) => (

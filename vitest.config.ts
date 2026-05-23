@@ -9,5 +9,12 @@ export default defineConfig({
   },
   test: {
     environment: "jsdom",
+    exclude: [
+      "**/node_modules/**",
+      "**/.next/**",
+      "**/out/**",
+      "**/release/**",
+      "**/红头顽家AI学习助手-电脑增强版/**",
+    ],
   },
 });
