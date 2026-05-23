@@ -28,44 +28,44 @@ const featureEntries = [
   {
     href: "/ask",
     icon: MessageSquareText,
-    title: "不会题就问",
-    copy: "按年级和科目提问，优先接本地引擎。",
+    title: "战术答疑",
+    copy: "拍照或输入题目，按年级和科目进入本地解析。",
   },
   {
     href: "/ask",
     icon: GraduationCap,
-    title: "按年级学习",
-    copy: "小学到大学切换表达深度和题目背景。",
+    title: "段位训练",
+    copy: "小学到大学自动切换讲解深度和训练节奏。",
   },
   {
     href: "/writing",
     icon: FilePenLine,
-    title: "作文批改",
-    copy: "看错别字、结构、亮点和示范版本。",
+    title: "作文精修",
+    copy: "像复盘战局一样看结构、亮点和提升动作。",
   },
   {
     href: "/mistakes",
     icon: NotebookPen,
-    title: "错题本",
-    copy: "把错因、讲解摘要和再练一题存本地。",
+    title: "复盘档案",
+    copy: "把错因、讲解摘要和再练任务存进本地档案。",
   },
   {
     href: "/plan",
     icon: ClipboardCheck,
-    title: "每日学习计划",
-    copy: "薄弱科目和时长一选就能执行。",
+    title: "今日任务",
+    copy: "薄弱科目和训练时长一选就能开局执行。",
   },
   {
     href: "/report",
     icon: BookOpenText,
-    title: "家长报告",
-    copy: "本周学习次数和建议自动整理。",
+    title: "成长战报",
+    copy: "本周训练次数、常问科目和下周建议自动整理。",
   },
 ];
 
 export default function HomePage() {
   return (
-    <div className="home-page-shell">
+    <div className="home-page-shell" data-theme="cyber-arena">
       <section className="hero-band home-hero" data-home-hero="flagship">
         <img
           alt="孩子与家长在电脑和平板旁整理本地学习内容"
@@ -78,28 +78,28 @@ export default function HomePage() {
             <div className="max-w-3xl text-white">
               <span className="home-hero-chip">
                 <BrainCircuit aria-hidden="true" className="h-4 w-4" />
-                本地 AI 学习机控制台
+                赛博训练舱
               </span>
               <h1 className="mt-5 text-4xl font-black leading-tight sm:text-6xl">
                 {APP_NAME}
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-8 text-blue-50 sm:text-xl">
-                不用云端 API，不产生调用费用。把全科答疑、作文批改、错题复盘和家长报告装进每一台可用设备。
+                不用云端 API，不产生调用费用。把全科答疑、作文精修、错题复盘和成长战报装进每一台可用设备。
               </p>
 
               <div className="home-capability-row mt-6">
                 {[
                   {
                     icon: Cpu,
-                    label: "本地推理",
+                    label: "本地算力",
                   },
                   {
                     icon: ShieldCheck,
-                    label: "数据优先留本机",
+                    label: "数据留本机",
                   },
                   {
                     icon: Smartphone,
-                    label: "多端自适应",
+                    label: "多端开局",
                   },
                 ].map(({ icon: Icon, label }) => (
                   <span key={label}>
@@ -112,7 +112,7 @@ export default function HomePage() {
               <div className="home-hero-actions mt-8">
                 <Link className="button-primary home-cta-primary" href="/ask">
                   <MessageSquareText aria-hidden="true" className="h-5 w-5" />
-                  开始学习
+                  进入训练
                 </Link>
                 <Link className="home-cta-secondary" href="/install-guide">
                   家长安装引导
@@ -135,8 +135,8 @@ export default function HomePage() {
               </div>
 
               <div className="home-console-readout">
-                <p>本地引擎路线</p>
-                <h2>电脑增强 · 移动轻量 · 备用工具</h2>
+                <p>训练引擎路线</p>
+                <h2>电脑增强 · 移动轻量 · 工具箱保底</h2>
               </div>
 
               <div className="home-console-layers">
@@ -171,13 +171,13 @@ export default function HomePage() {
         <section className="surface home-mode-bank relative z-10 p-5 sm:p-7">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <span className="chip">能力路径</span>
+              <span className="chip">训练路径</span>
               <h2 className="mt-4 text-2xl font-black text-slate-950 sm:text-3xl">
-                每台设备都有合适的学习档位
+                每台设备都有合适的训练档位
               </h2>
             </div>
             <p className="max-w-sm text-sm leading-7 text-slate-600">
-              先检测，再进入本机最稳的答疑方式。低配置设备也保留计划、模板和复盘动作。
+              先检测，再进入本机最稳的答疑方式。低配置设备也保留任务、模板和复盘动作。
             </p>
           </div>
           <div className="mt-6 grid gap-4 xl:grid-cols-3">
@@ -249,13 +249,13 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <div className="home-section-heading">
           <div className="max-w-2xl">
-            <span className="chip">核心功能舱</span>
+              <span className="chip">核心训练舱</span>
             <h2 className="mt-4 text-3xl font-black text-slate-950">
-              正式学习机该有的主流程，一屏进入
+              孩子愿意点开的学习主流程，一屏进入
             </h2>
           </div>
           <p>
-            从提问到复盘，再到家长周报，把“学会了什么”和“下一步做什么”接起来。
+            从题目识别到复盘，再到家长战报，把“学会了什么”和“下一步做什么”接起来。
           </p>
         </div>
         <div className="home-feature-deck mt-6">
