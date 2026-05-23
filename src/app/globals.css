@@ -77,18 +77,33 @@ textarea {
 
 .surface {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(231, 243, 255, 0.9));
+    linear-gradient(135deg, rgba(8, 25, 58, 0.94), rgba(5, 13, 34, 0.92));
   border: 1px solid rgba(128, 222, 255, 0.36);
   border-radius: 8px;
   box-shadow:
-    0 22px 64px rgba(0, 0, 0, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+    0 22px 64px rgba(0, 0, 0, 0.28),
+    0 0 38px rgba(54, 211, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
   position: relative;
+}
+
+.surface::before {
+  background:
+    linear-gradient(90deg, rgba(54, 211, 255, 0.72), transparent 38%),
+    linear-gradient(180deg, rgba(54, 211, 255, 0.34), transparent 46%);
+  content: "";
+  height: 2px;
+  left: 0;
+  opacity: 0.72;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .surface-quiet {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(226, 243, 255, 0.72));
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(54, 211, 255, 0.055));
   border: 1px solid rgba(128, 222, 255, 0.26);
   border-radius: 8px;
 }
@@ -98,7 +113,7 @@ textarea {
   background: rgba(54, 211, 255, 0.13);
   border: 1px solid rgba(54, 211, 255, 0.26);
   border-radius: 999px;
-  color: #075985;
+  color: #bff5ff;
   display: inline-flex;
   font-size: 0.82rem;
   font-weight: 900;
@@ -110,10 +125,10 @@ textarea {
 }
 
 .field {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid var(--line);
+  background: rgba(2, 10, 31, 0.72);
+  border: 1px solid rgba(99, 232, 255, 0.24);
   border-radius: 8px;
-  color: var(--ink);
+  color: #eaf7ff;
   min-height: 2.9rem;
   outline: none;
   padding: 0.78rem 0.9rem;
@@ -121,8 +136,14 @@ textarea {
 }
 
 .field:focus {
-  border-color: rgba(11, 99, 246, 0.72);
-  box-shadow: 0 0 0 4px rgba(11, 99, 246, 0.12);
+  border-color: rgba(54, 211, 255, 0.72);
+  box-shadow:
+    0 0 0 4px rgba(54, 211, 255, 0.12),
+    0 0 24px rgba(54, 211, 255, 0.16);
+}
+
+.field::placeholder {
+  color: rgba(218, 240, 255, 0.46);
 }
 
 .button-primary,
@@ -158,13 +179,13 @@ textarea {
 .button-secondary {
   background: rgba(54, 211, 255, 0.1);
   border: 1px solid rgba(54, 211, 255, 0.28);
-  color: #075985;
+  color: #d9fbff;
 }
 
 .button-ghost {
-  background: white;
-  border: 1px solid var(--line);
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(99, 232, 255, 0.22);
+  color: #eaf7ff;
 }
 
 .button-primary:hover,
@@ -228,6 +249,76 @@ textarea {
 .record-line {
   border-left: 2px solid rgba(11, 99, 246, 0.22);
   padding-left: 1rem;
+}
+
+main {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(54, 211, 255, 0.11), transparent 22rem),
+    radial-gradient(circle at 84% 18%, rgba(255, 61, 242, 0.08), transparent 20rem);
+  min-height: calc(100vh - 9rem);
+}
+
+main h1,
+main h2,
+main h3,
+main .text-slate-950,
+main .text-slate-900 {
+  color: #f2fbff;
+}
+
+main p,
+main li,
+main .text-slate-500,
+main .text-slate-600,
+main .text-slate-700 {
+  color: rgba(218, 240, 255, 0.74);
+}
+
+main label,
+main .text-slate-700 {
+  color: rgba(230, 248, 255, 0.88);
+}
+
+main code {
+  border: 1px solid rgba(54, 211, 255, 0.18);
+}
+
+.surface .bg-amber-50 {
+  background: rgba(255, 224, 106, 0.12);
+  border-color: rgba(255, 224, 106, 0.32);
+  color: #fff0a8;
+}
+
+.surface .bg-rose-50 {
+  background: rgba(255, 61, 112, 0.12);
+  border-color: rgba(255, 110, 150, 0.34);
+  color: #ffd0dc;
+}
+
+.surface .bg-violet-50 {
+  background: rgba(138, 53, 255, 0.13);
+  border-color: rgba(180, 135, 255, 0.32);
+  color: #eadcff;
+}
+
+.surface .bg-blue-100,
+.surface .bg-cyan-100,
+.surface .bg-violet-100,
+.surface .bg-emerald-100 {
+  background: rgba(54, 211, 255, 0.13);
+  color: #bff5ff;
+}
+
+.surface .text-blue-700,
+.surface .text-cyan-700,
+.surface .text-violet-700,
+.surface .text-emerald-700 {
+  color: #92f2ff;
+}
+
+.surface select option {
+  background: #08152f;
+  color: #eaf7ff;
 }
 
 .home-page-shell {

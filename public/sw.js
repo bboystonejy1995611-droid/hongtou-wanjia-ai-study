@@ -1,4 +1,4 @@
-const CACHE_NAME = "hongtou-wanjia-local-shell-v4";
+const CACHE_NAME = "hongtou-wanjia-local-shell-v5";
 const APP_SHELL = [
   "/",
   "/offline",

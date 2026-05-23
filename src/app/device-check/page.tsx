@@ -35,10 +35,10 @@ export default function DeviceCheckPage() {
           <div className="max-w-3xl">
             <span className="chip">
               <LaptopMinimalCheck aria-hidden="true" className="h-4 w-4" />
-              设备检测
+              设备雷达
             </span>
             <h1 className="mt-4 text-3xl font-black text-slate-950">
-              先看本机能走哪条学习路线
+              扫描本机能走哪条训练路线
             </h1>
             <p className="mt-3 text-sm leading-7 text-slate-600">
               系统会检测当前设备、Ollama、WebGPU 和本地缓存能力。检测结果只在浏览器里使用，不需要登录。
@@ -50,7 +50,7 @@ export default function DeviceCheckPage() {
             type="button"
           >
             <RefreshCw aria-hidden="true" className="h-4 w-4" />
-            重新检测
+            刷新雷达
           </button>
         </div>
 
@@ -105,7 +105,7 @@ export default function DeviceCheckPage() {
         <article className="surface p-5 sm:p-6">
           <span className="chip">
             <HardDriveDownload aria-hidden="true" className="h-4 w-4" />
-            当前推荐模式
+            推荐训练模式
           </span>
           <h2 className="mt-4 text-3xl font-black text-slate-950">
             {MODE_LABELS[profile.mode]}
@@ -129,16 +129,16 @@ export default function DeviceCheckPage() {
 
           <div className="mt-5 flex flex-wrap gap-3">
             <Link className="button-primary" href="/ask">
-              去答疑页
+              进入战术答疑
             </Link>
             <Link className="button-ghost" href="/plan">
-              先生成学习计划
+              生成今日任务
             </Link>
           </div>
         </article>
 
         <article className="surface p-5 sm:p-6">
-          <h2 className="text-2xl font-black text-slate-950">不可用时怎么处理</h2>
+          <h2 className="text-2xl font-black text-slate-950">路线不可用时怎么处理</h2>
           <div className="mt-4 grid gap-3">
             <div className="surface-quiet p-4">
               <h3 className="font-black text-slate-950">电脑端 Ollama</h3>

@@ -115,15 +115,15 @@ export default function AskPage() {
         <div className="mt-4 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
             <h1 className="text-3xl font-black text-slate-950">
-              选年级和科目，再把问题讲清楚
+              选择段位和科目，进入战术答疑
             </h1>
             <p className="mt-3 text-sm leading-7 text-slate-600">
-              本页会按当前设备模式接入本地引擎。移动端适合基础答疑和轻量学习，不适合超复杂题目。
+              支持上传题目图片或手动输入，系统会按当前设备模式接入本地引擎。移动端适合基础答疑和轻量训练。
             </p>
           </div>
           <div className="surface-quiet flex flex-wrap items-center justify-between gap-3 p-4">
             <div>
-              <p className="text-sm font-bold text-slate-500">当前路线</p>
+              <p className="text-sm font-bold text-slate-500">当前作战路线</p>
               <p className="mt-1 text-xl font-black text-slate-950">
                 {checking ? "正在检测" : MODE_LABELS[effectiveMode]}
               </p>
@@ -135,7 +135,7 @@ export default function AskPage() {
               type="button"
             >
               <RefreshCw aria-hidden="true" className="h-4 w-4" />
-              重新检测
+              刷新雷达
             </button>
           </div>
         </div>
@@ -243,14 +243,14 @@ export default function AskPage() {
               ) : (
                 <MessageSquareText aria-hidden="true" className="h-4 w-4" />
               )}
-              {effectiveMode === "fallback" ? "生成学习步骤模板" : "开始本地答疑"}
+              {effectiveMode === "fallback" ? "生成战术步骤" : "开始本地答疑"}
             </button>
             <button
               className="button-ghost"
               onClick={() => setForceFallback((current) => !current)}
               type="button"
             >
-              {forceFallback ? "回到自动模式" : "切到备用模板"}
+              {forceFallback ? "回到自动路线" : "切到工具箱"}
             </button>
           </div>
         </article>
@@ -258,7 +258,7 @@ export default function AskPage() {
         <article className="surface p-5 sm:p-6">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <p className="text-sm font-bold text-slate-500">回答结构</p>
+              <p className="text-sm font-bold text-slate-500">战术回放结构</p>
               <h2 className="mt-1 text-2xl font-black text-slate-950">
                 分析、讲解、步骤、答案、练习、建议
               </h2>
@@ -281,7 +281,7 @@ export default function AskPage() {
                 type="button"
               >
                 <BookPlus aria-hidden="true" className="h-4 w-4" />
-                {saved ? "已收进错题本" : "收进错题本"}
+                {saved ? "已存入复盘档案" : "存入复盘档案"}
               </button>
             ) : null}
           </div>
@@ -291,7 +291,7 @@ export default function AskPage() {
               <StructuredAnswer answer={answer} />
             ) : (
               <div className="surface-quiet min-h-72 p-5 text-sm leading-7 text-slate-600">
-                提交问题后，这里会显示结构化回答。备用模式会给出学习模板和引导步骤，不会调用 AI。
+                提交问题后，这里会显示结构化回答。工具箱模式会给出学习模板和引导步骤，不会调用 AI。
               </div>
             )}
           </div>
